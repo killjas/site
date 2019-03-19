@@ -1,0 +1,22 @@
+CREATE TABLE person (
+  id SERIAL PRIMARY KEY ,
+  login varchar(50),
+  password varchar(200)
+);
+
+CREATE TABLE auth(
+  id SERIAL PRIMARY KEY,
+  user_id integer REFERENCES person(id),
+  cookie_value varchar(40)
+);
+
+CREATE TABLE role(
+  id SERIAL PRIMARY KEY ,
+  role varchar(50)
+);
+
+CREATE TABLE role_user(
+  id SERIAL PRIMARY KEY ,
+  user_id integer REFERENCES person(id),
+  role_id integer REFERENCES role(id)
+);
