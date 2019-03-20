@@ -60,6 +60,7 @@ public class UsersServiceImpl implements UsersService {
         User user = User.builder()
                 .name(form.getLogin())
                 .hashPassword(passwordEncoder.encode(form.getPassword()))
+                .role(form.getRole())
                 .build();
 
         usersRepository.save(user);

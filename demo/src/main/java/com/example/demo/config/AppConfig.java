@@ -2,6 +2,7 @@ package com.example.demo.config;
 
 
 import com.example.demo.filter.AuthFilter;
+import com.example.demo.filter.RoleFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
@@ -32,4 +33,7 @@ public class AppConfig {
         registration.addUrlPatterns("/common/*");
         return registration;
     }
+    
+    //фильтр для ролей (на какие урлы он будет ссылаться? )
+
 }
