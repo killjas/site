@@ -22,9 +22,18 @@ public class UsersRepositoryImpl implements UsersRepository {
     //language=SQL
     private static final String SQL_SELECT_BY_EMAIL =
             "select * from person where login = ?;";
+
+    //language=SQL
+//    private static final String SQL_SELECT_BY_COOKIE =
+//            "select * from person.*,  "
+//
     //language=SQL
     private static final String SQL_INSERT =
             "insert into person(login, password) values (?, ?);";
+
+    //language=SQL
+    private static final String SQL_INSERT_ROLE = "insert into role_user(user_id, role) values (?, ?)";
+
     private RowMapper<User> userRowMapper = ((resultSet, i) -> User.builder()
     .id(resultSet.getLong("id"))
     .name(resultSet.getString("login"))
@@ -34,6 +43,11 @@ public class UsersRepositoryImpl implements UsersRepository {
     @Override
     public Optional<User> findByName(String username) {
         return Optional.of(jdbcTemplate.queryForObject(SQL_SELECT_BY_EMAIL, userRowMapper, username));
+    }
+
+    @Override
+    public Optional<User> findByCookie(String cookie) {
+        return Optional.empty();
     }
 
     @Override
@@ -49,5 +63,6 @@ public class UsersRepositoryImpl implements UsersRepository {
                 }, keyHolder);
 
         user.setId(keyHolder.getKey().longValue());
+        jdbcTemplate.update(SQL_INSERT_ROLE,user.getId(),user.getRole());
     }
 }

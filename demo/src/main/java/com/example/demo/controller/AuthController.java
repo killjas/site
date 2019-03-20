@@ -41,10 +41,12 @@ public class AuthController {
         }
     }
     @RequestMapping(value = {"/signUp"}, method = RequestMethod.POST)
-    public String signUp(@RequestParam(name = "username") String username, @RequestParam(name = "pass") String password){
+    public String signUp(@RequestParam(name = "username") String username, @RequestParam(name = "pass") String password,
+                         @RequestParam(name = "role") String role){
         SignUpForm signUpForm = SignUpForm.builder()
                 .login(username)
                 .password(password)
+                .role(role)
                 .build();
         usersService.signUp(signUpForm);
         return "signIn";

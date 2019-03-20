@@ -14,4 +14,5 @@ import org.springframework.stereotype.Component;
 public class SignUpForm {
     private String login;
     private String password;
+    private String role;
 }
