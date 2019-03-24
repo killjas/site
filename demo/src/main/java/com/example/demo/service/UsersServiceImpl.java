@@ -12,6 +12,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -55,6 +56,7 @@ public class UsersServiceImpl implements UsersService {
         }
         return null;
     }
+
     @Override
     public void signUp(SignUpForm form) {
         User user = User.builder()
@@ -79,4 +81,17 @@ public class UsersServiceImpl implements UsersService {
         return false;
     }
 
+    @Override
+    public void addProject(Long userId, String projectName) {
+        usersRepository.newProject(userId, projectName);
+    }
+
+    @Override
+    public Long findUserIdByCookie(String value){
+        return usersRepository.findByCookie(value).get().getId();
+    }
+    @Override
+    public List<String> getUsersProjects(Long userId){
+        return usersRepository.getProjects(userId);
+    }
 }
