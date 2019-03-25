@@ -87,7 +87,7 @@ public class ProjectController {
         return "downloadPage";
     }
 
-    @RequestMapping(value = "/donwload/{projectName}", method = RequestMethod.GET)
+    @RequestMapping(value = "/download/{projectName}", method = RequestMethod.GET)
     public String projectsHandl(@PathVariable("projectName") String projectName, Model model) {
         String path = System.getProperty("user.dir") + "/uploads/" + projectName;
         File file = new File(path);

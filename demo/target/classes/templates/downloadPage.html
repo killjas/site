@@ -8,12 +8,12 @@
 <body>
 <div th:if="${projects}">
     <tr th:each="project:${projects}">
-        <a th:href="@{/download/${project}}" th:utext="${project}"></a>
+        <a th:href="@{/download/__${project}__}" th:utext="${project}"></a>
     </tr>
 </div>
 <div th:if="${files}">
     <tr th:each="file:${files}">
-        <a th:href="@{/download/${projName}/${file}}"></a>
+        <a th:href="@{/download/__${projName}__/__${file}__}"></a>
     </tr>
 </div>
 </body>

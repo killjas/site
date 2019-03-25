@@ -26,9 +26,9 @@ public class UsersRepositoryImpl implements UsersRepository {
             "select * from person where login = ?;";
 
     //language=SQL
-//    private static final String SQL_SELECT_BY_COOKIE =
-//            "select * from person.*,  "
-//
+    private static final String SQL_SELECT_BY_COOKIE =
+            "select * from person right join auth a on person.id = a.user_id where cookie_value = ?";
+
     //language=SQL
     private static final String SQL_INSERT =
             "insert into person(login, password) values (?, ?);";
@@ -36,7 +36,7 @@ public class UsersRepositoryImpl implements UsersRepository {
     //language=SQL
     private static final String SQL_INSERT_ROLE = "insert into role_user(user_id, role) values (?, ?)";
     //language=SQL
-    private static final String SQL_ADD_NEW_PROJECT = "insert into person_project(person_id, project_name) value (?,?)";
+    private static final String SQL_ADD_NEW_PROJECT = "insert into person_project(person_id, project_name) values (?,?)";
     //language=SQL
     private static final String SQL_SELECT_USERS_PROJECTS = "select project_name from person_project where person_id=?";
 
@@ -53,7 +53,7 @@ public class UsersRepositoryImpl implements UsersRepository {
 
     @Override
     public Optional<User> findByCookie(String cookie) {
-        return Optional.empty();
+        return Optional.of(jdbcTemplate.queryForObject(SQL_SELECT_BY_COOKIE, userRowMapper, cookie));
     }
 
     @Override
@@ -74,7 +74,7 @@ public class UsersRepositoryImpl implements UsersRepository {
 
     @Override
     public void newProject(Long userId, String projectName) {
-        jdbcTemplate.update(SQL_ADD_NEW_PROJECT);
+        jdbcTemplate.update(SQL_ADD_NEW_PROJECT, userId, projectName);
     }
 
     @Override
