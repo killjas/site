@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создать новый проект</title>
+    <link rel="stylesheet" href="../static/css/sign.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+
+
+    <form method="post" class="form-signin">
+        <h1 class="h1_project" style="color: #1125a2; text-align: center; margin: 25px;">
+            Создать новый проект
+        </h1>
+            <p><input name="name" class="feedback_input" id="name" aria-describedby="emailHelp"
+                   placeholder="Название проекта"></p>
+            <p><input name="smallInfo" class="feedback_input"id="smallInfo" aria-describedby="emailHelp"
+                   placeholder="Введите краткую информацию"></p>
+           <p> <input name="fullInfo" class="feedback_input" id="fullInfo" aria-describedby="emailHelp"
+                   placeholder="Введите полную информацию"></p>
+        <input type="submit" onclick="return validate(this.form)"  value="СОЗДАТЬ" class="btn btn-primary btn-block mx-auto">
+
+    </form>
+
+</body>
+</html>
+</html>
