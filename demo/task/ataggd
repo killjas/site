@@ -3,11 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>Welcome</title>
-<<<<<<< HEAD
-    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
-=======
     <link rel="stylesheet" type="text/css" th:href="@{/static/css/style.css}"/>
->>>>>>> 9490d1d2fb1bb5cb089c5ee704196a1c6a404846
 </head>
 <body>
 <h1>Profile</h1>
