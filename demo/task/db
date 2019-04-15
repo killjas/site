@@ -1,0 +1,23 @@
+CREATE TABLE person (
+id SERIAL PRIMARY KEY ,
+login varchar(50),
+password varchar(200)
+);
+
+CREATE TABLE auth(
+id SERIAL PRIMARY KEY,
+user_id integer REFERENCES person(id),
+cookie_value varchar(40)
+);
+
+CREATE TABLE role_user(
+user_id integer REFERENCES person(id),
+role varchar(50)
+);
+
+create table person_project
+(
+  person_id    int,
+  project_name varchar(255),
+  foreign key (person_id) references person (id)
+);
