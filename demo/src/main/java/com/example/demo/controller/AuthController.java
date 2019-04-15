@@ -25,7 +25,7 @@ public class AuthController {
     UsersService usersService;
 
     @RequestMapping(value = {"/signIn"}, method = RequestMethod.POST)
-    public String signIn(HttpServletResponse resp, @RequestParam(name = "username") String username, @RequestParam(name = "pass") String password){
+    public String signIn(HttpServletResponse resp, @RequestParam(name = "username") String username, @RequestParam(name = "pass") String password) {
         SignInForm signInForm = SignInForm.builder()
                 .login(username)
                 .password(password)
@@ -35,29 +35,28 @@ public class AuthController {
         if (cookieValue != null) {
             Cookie auth = new Cookie("auth", cookieValue);
             resp.addCookie(auth);
-            return "/common/index";
+            return "home";
         } else {
             return "signIn";
         }
     }
+
     @RequestMapping(value = {"/signUp"}, method = RequestMethod.POST)
-    public String signUp(@RequestParam(name = "username") String username, @RequestParam(name = "pass") String password,
-                         @RequestParam(name = "role") String role){
+    public String signUp(@RequestParam(name = "username") String username, @RequestParam(name = "pass") String password) {
         SignUpForm signUpForm = SignUpForm.builder()
                 .login(username)
                 .password(password)
-                .role(role)
                 .build();
         usersService.signUp(signUpForm);
         return "signIn";
     }
 
-    @RequestMapping(value = { "/common/logout" }, method = RequestMethod.GET)
+    @RequestMapping(value = {"/common/logout"}, method = RequestMethod.GET)
     public String signUp(HttpServletRequest request, HttpServletResponse response) {
         Cookie cookie = null;
         Cookie[] cookies = request.getCookies();
-        for (int i = 0; i < cookies.length ; i++) {
-            if(cookies[i].getName().equals("auth")){
+        for (int i = 0; i < cookies.length; i++) {
+            if (cookies[i].getName().equals("auth")) {
                 cookie = cookies[i];
             }
         }

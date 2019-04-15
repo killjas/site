@@ -63,6 +63,5 @@ public class UsersRepositoryImpl implements UsersRepository {
                 }, keyHolder);
 
         user.setId(keyHolder.getKey().longValue());
-        jdbcTemplate.update(SQL_INSERT_ROLE,user.getId(),user.getRole());
     }
 }

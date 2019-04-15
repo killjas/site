@@ -16,18 +16,29 @@ public class MainController {
     @Value("${error.message}")
     private String errorMessage;
 
-    @RequestMapping(value = { "/", "/common/index" }, method = RequestMethod.GET)
+    @RequestMapping(value = { "/", "/home" }, method = RequestMethod.GET)
     public String index(Model model) {
 
         model.addAttribute("message", message);
 
-        return "index";
+        return "home";
     }
     @RequestMapping(value = { "/signIn" }, method = RequestMethod.GET)
     public String signIn() {
         return "signIn";
     }
-
+    @RequestMapping(value = { "/editProfilePage" }, method = RequestMethod.GET)
+    public String editProfilePage() {
+        return "editProfilePage";
+    }
+    @RequestMapping(value = { "/newProject" }, method = RequestMethod.GET)
+    public String newProject() {
+        return "newproject";
+    }
+    @RequestMapping(value = { "/profile" }, method = RequestMethod.GET)
+    public String profile() {
+        return "profile";
+    }
     @RequestMapping(value = { "/signUp" }, method = RequestMethod.GET)
     public String signUp() {
         return "signUp";

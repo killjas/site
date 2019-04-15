@@ -1,31 +1,80 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8" />
-    <title>Welcome</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/static/css/style.css}"/>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" th:href="@{/css/sign.css}">
+    <link rel="stylesheet" th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}"/>
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+
 </head>
 <body>
-<h1>Projects List</h1>
 
-<a th:href="@{/user}">Profile</a>
-<a th:href="@{/index}">Main</a>
-
-
-<form action="#" th:action="@{/signUp}" method="post">
-    <label for="username">Username</label>
-    <input type="text" name="username" id="username"/>
-
-    <label for="pass">Password</label>
-    <input type="password" name="pass" id="pass"/>
-    <br>
-    <label for="role">Выберите статус</label><select name="role" id="role">
-        <option>Пользователь</option>
-        <option>Студент</option>
-    </select>
-
-    <input type="submit" name="submit"/>
+<form method="post" class="form-signin">
+    <h1 class="h1_project" style="color: #1125a2; text-align: center; margin: 25px;">
+        РЕГИСТРАЦИЯ
+    </h1>
+    <p><input name="firstName" placeholder="Имя" class="feedback_input"></p>
+    <p><input name="lastName" placeholder="Фамилия" class="feedback_input"></p>
+    <p><input type="email" name="email" placeholder="Электронная почта" class="feedback_input"></p>
+    <p><input name="username" id="username" placeholder="Логин" class="feedback_input"></p>
+    <p><input type="password" id="pass" name="pass" placeholder="Пароль" class="feedback_input"></p>
+    <input type="submit" onclick="return validate(this.form)"  value="ЗАРЕГИСТРИРОВАТЬСЯ" class="btn btn-primary btn-block mx-auto">
 </form>
-</body>
+<script>
+    function showError(container, errorMessage) {
+        container.className = 'error';
+        var msgElem = document.createElement('span');
+        msgElem.className = "error-message";
+        msgElem.innerHTML = errorMessage;
+        container.appendChild(msgElem);
+    }
 
+    function resetError(container) {
+        container.className = '';
+        if (container.lastChild.className == "error-message") {
+            container.removeChild(container.lastChild);
+        }
+    }
+
+    function validate(form) {
+        var elems = form.elements;
+
+        resetError(elems.firstName.parentNode);
+        if (!elems.firstName.value) {
+            showError(elems.firstName.parentNode, ' Укажите Ваше имя.');
+            return false;
+        }
+
+        resetError(elems.lastName.parentNode);
+        if (!elems.lastName.value) {
+            showError(elems.lastName.parentNode, ' Укажите Вашу фамилию.');
+            return false;
+        }
+
+        resetError(elems.email.parentNode);
+        if (!elems.email.value) {
+            showError(elems.email.parentNode, ' Укажите электронную почту.');
+            return false;
+        }
+
+
+        resetError(elems.password.parentNode);
+        if (!elems.password.value) {
+            showError(elems.password.parentNode, ' Укажите пароль.');
+            return false;
+        }
+
+    }
+</script>
+
+
+
+
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+<script type="text/javascript" th:src="@{webjars/bootstrap/4.2.1/js/bootstrap.min.js}"></script>
+</body>
 </html>
