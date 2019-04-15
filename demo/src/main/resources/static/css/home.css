@@ -1,4 +1,117 @@
-body{
-    background: url(../../image/homeback2.png) no-repeat;
-    background-size: cover;
+
+svg:not(:root) {
+    overflow: hidden;
+}
+.intro-bg-shape {
+    position: absolute;
+    width: 1100px;
+    height: 800px;
+    z-index: -1;
+    top: -120px;
+    left: -280px;
+    transform: rotate(35deg);
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.intro-text {
+    padding-top: 100px;
+}
+
+
+
+.col-sm-6{
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.title-intro {
+    /*color: #fff;*/
+    color: #173d7b;
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 48px;
+}
+.intro-text .lead {
+    /*color: #E1CEFF;*/
+    color: #173d7b;
+
+}
+
+.lead {
+    font-size: 26px;
+}
+.lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+h4, .h4 {
+    font-size: 1.5rem;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    margin-bottom: 0.5rem;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.2;
+    color: inherit;
+}
+.intro-text .special {
+    font-size: 18px;
+    background: #ff2d9b;
+    border-radius: 20px;
+    padding: 7px 15px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    display: inline-block;
+}
+
+*, *::before, *::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.text-white-50 {
+    /*color: rgba(255, 255, 255, 0.5) !important;*/
+    color: #173d7b;
+}
+
+.mt-3, .my-3 {
+    margin-top: 1rem !important;
+}
+small, .small {
+    font-size: 80%;
+    font-weight: 400;
+}
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+.fa, .fas {
+    font-weight: 900;
+}
+.fa, .far, .fas {
+    font-family: Font Awesome\ 5 Free;
+}
+.fa, .fab, .fal, .far, .fas {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+}
+*, *::before, *::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
 }

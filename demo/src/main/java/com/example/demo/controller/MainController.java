@@ -17,10 +17,7 @@ public class MainController {
     private String errorMessage;
 
     @RequestMapping(value = { "/", "/home" }, method = RequestMethod.GET)
-    public String index(Model model) {
-
-        model.addAttribute("message", message);
-
+    public String index() {
         return "home";
     }
     @RequestMapping(value = { "/signIn" }, method = RequestMethod.GET)
