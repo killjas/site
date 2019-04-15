@@ -69,8 +69,6 @@ public class UsersRepositoryImpl implements UsersRepository {
                 }, keyHolder);
 
         user.setId(keyHolder.getKey().longValue());
-<<<<<<< HEAD
-=======
         jdbcTemplate.update(SQL_INSERT_ROLE, user.getId(), user.getRole());
     }
 
@@ -82,6 +80,5 @@ public class UsersRepositoryImpl implements UsersRepository {
     @Override
     public List<String> getProjects(Long userId) {
         return jdbcTemplate.queryForList(SQL_SELECT_USERS_PROJECTS,String.class,userId);
->>>>>>> 9490d1d2fb1bb5cb089c5ee704196a1c6a404846
     }
 }
