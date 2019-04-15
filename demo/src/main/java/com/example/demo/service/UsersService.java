@@ -13,4 +13,10 @@ public interface UsersService {
     void signUp(SignUpForm signUpForm);
     void delete (String cookie);
     boolean isExistByCookie(String value);
+
+    void addProject(Long userId, String projectName);
+
+    Long findUserIdByCookie(String value);
+
+    List<String> getUsersProjects(Long userId);
 }
