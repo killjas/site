@@ -1,10 +1,14 @@
 package com.example.demo.controller;
 
+import com.example.demo.model.User;
+import com.example.demo.security.UserDetailsImpl;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class MainController {
@@ -16,27 +20,32 @@ public class MainController {
     @Value("${error.message}")
     private String errorMessage;
 
-    @RequestMapping(value = { "/", "/home" }, method = RequestMethod.GET)
+    @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
     public String index() {
         return "home";
     }
-    @RequestMapping(value = { "/signIn" }, method = RequestMethod.GET)
+
+    @GetMapping("/signIn")
     public String signIn() {
         return "signIn";
     }
-    @RequestMapping(value = { "/editProfilePage" }, method = RequestMethod.GET)
+
+    @GetMapping("/editProfilePage")
     public String editProfilePage() {
         return "editProfilePage";
     }
-    @RequestMapping(value = { "/newProject" }, method = RequestMethod.GET)
+
+    @GetMapping("/newProject")
     public String newProject() {
         return "newproject";
     }
-    @RequestMapping(value = { "/profile" }, method = RequestMethod.GET)
+
+    @GetMapping("/profile")
     public String profile() {
         return "profile";
     }
-    @RequestMapping(value = { "/signUp" }, method = RequestMethod.GET)
+
+    @GetMapping("/signUp")
     public String signUp() {
         return "signUp";
     }

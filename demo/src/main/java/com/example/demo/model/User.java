@@ -5,7 +5,6 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
-@EqualsAndHashCode(exclude = "hashPassword")
 @Builder
 public class User {
     private Long id;

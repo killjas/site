@@ -6,12 +6,10 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.util.List;
 import java.util.Optional;
 
@@ -34,7 +32,7 @@ public class UsersRepositoryImpl implements UsersRepository {
             "insert into person(login, password) values (?, ?);";
 
     //language=SQL
-    private static final String SQL_INSERT_ROLE = "insert into role_user(user_id, role) values (?, ?)";
+//    private static final String SQL_INSERT_ROLE = "insert into role_user(user_id, role) values (?, ?)";
     //language=SQL
     private static final String SQL_ADD_NEW_PROJECT = "insert into person_project(person_id, project_name) values (?,?)";
     //language=SQL
@@ -69,7 +67,7 @@ public class UsersRepositoryImpl implements UsersRepository {
                 }, keyHolder);
 
         user.setId(keyHolder.getKey().longValue());
-        jdbcTemplate.update(SQL_INSERT_ROLE, user.getId(), user.getRole());
+//        jdbcTemplate.update(SQL_INSERT_ROLE, user.getId(), user.getRole());
     }
 
     @Override

@@ -17,7 +17,15 @@ role varchar(50)
 
 create table person_project
 (
-  person_id    int,
+  person_id int,
+  project_id int,
   project_name varchar(255),
-  foreign key (person_id) references person (id)
+  foreign key (person_id) references person (id),
+  foreign key (project_id) references project (id)
+);
+create table project
+(
+  id SERIAL PRIMARY KEY ,
+  project_name varchar(50),
+  project_full_info varchar(500)
 );

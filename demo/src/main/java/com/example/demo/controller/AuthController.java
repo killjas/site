@@ -5,8 +5,8 @@ import com.example.demo.form.SignUpForm;
 import com.example.demo.service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.Cookie;
@@ -24,7 +24,7 @@ public class AuthController {
     @Autowired
     UsersService usersService;
 
-    @RequestMapping(value = {"/signIn"}, method = RequestMethod.POST)
+    @PostMapping("/signIn")
     public String signIn(HttpServletResponse resp, @RequestParam(name = "username") String username, @RequestParam(name = "pass") String password) {
         SignInForm signInForm = SignInForm.builder()
                 .login(username)
@@ -35,23 +35,22 @@ public class AuthController {
         if (cookieValue != null) {
             Cookie auth = new Cookie("auth", cookieValue);
             resp.addCookie(auth);
-            return "home";
+            return "redirect:/home";
         } else {
-            return "signIn";
+            return "redirect:/signIn";
         }
     }
-
-    @RequestMapping(value = {"/signUp"}, method = RequestMethod.POST)
+    @PostMapping("/signUp")
     public String signUp(@RequestParam(name = "username") String username, @RequestParam(name = "pass") String password) {
         SignUpForm signUpForm = SignUpForm.builder()
                 .login(username)
                 .password(password)
                 .build();
         usersService.signUp(signUpForm);
-        return "signIn";
+        return "redirect:/signIn";
     }
 
-    @RequestMapping(value = {"/common/logout"}, method = RequestMethod.GET)
+    @GetMapping("/common/logout")
     public String signUp(HttpServletRequest request, HttpServletResponse response) {
         Cookie cookie = null;
         Cookie[] cookies = request.getCookies();
@@ -61,6 +60,6 @@ public class AuthController {
             }
         }
         usersService.delete(cookie.getValue());
-        return "signUp";
+        return "redirect:/signUp";
     }
 }

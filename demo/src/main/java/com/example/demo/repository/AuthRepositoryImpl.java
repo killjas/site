@@ -7,10 +7,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
 
-import javax.servlet.http.Cookie;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
 @Component
 public class AuthRepositoryImpl implements AuthRepository {
 

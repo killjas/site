@@ -4,7 +4,6 @@ import com.example.demo.form.SignInForm;
 import com.example.demo.form.SignUpForm;
 import com.example.demo.model.User;
 
-import javax.servlet.http.Cookie;
 import java.util.List;
 
 public interface UsersService {
