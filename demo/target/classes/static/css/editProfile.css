@@ -1,1 +1,46 @@
 .form-group .col-xs-6 .input{border-radius: 30px !important;}
+h4{
+    font-size: 1.3rem !important;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 90% !important;
+    }
+}
+
+.profile-usertitle-name {
+    color: darkslategrey;
+    font-size: 23px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.profile-usertitle-job {
+    text-transform: uppercase;
+    color: #5b9bd1;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/*nav*/
+.navbar{
+    background:none;
+}
+.nav-link , .navbar-brand{
+    color: #173d7b;
+    cursor: pointer;
+}
+.nav-link{
+    margin-right: 1em !important;
+}
+.nav-link:hover{
+    color: #1125a2;
+}
+.navbar-collapse{
+    justify-content: flex-end;
+}
+.navbar-toggler{
+    background:#fff !important;
+}

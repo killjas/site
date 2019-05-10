@@ -5,123 +5,133 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/editProfile.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body>
-<hr>
-<div class="container bootstrap snippet">
-    <!--    <div class="row">-->
-    <!--        <div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" src="http://www.gravatar.com/avatar/28fd20ccec6865e2d5f0e1f4446eb7bf?s=100"></a></div>-->
-    <!--    </div>-->
+<body style="background: #f6f9fb">
+<nav class="navbar navbar-expand-lg fixed-top">
+    <a class="navbar-brand" href="#" style="padding-left: 30px; margin-right: 5px"><img src="/image/logopng.png" style="width: 50px; height: 50px"></a>
+    <strong style="color: #173d7b; font-size: 1.6rem">ITIS HUB</strong>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-4">
+            <li class="nav-item">
+                <a class="nav-link " href="#">Выход</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="container bootstrap snippet" style="margin:90px 70px;">
     <div class="row">
         <div class="col-sm-3"><!--left col-->
 
-
             <div class="text-center">
-                <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
-                <input type="file" class="text-center center-block file-upload">
+                <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar" style="border-radius: 100px">
+                <input type="file" class="text-center center-block file-upload" style="margin-top: 10px">
+                <div class="profile-usertitle" style="margin-top: 15px">
+                    <div class="profile-usertitle-name">
+                        Имя Фамилия
+                    </div>
+                    <div class="profile-usertitle-job">
+                        Роль
+                    </div>
+                </div>
             </div></hr><br>
 
-
-
-            <!--                <div class="panel-body"><a href="http://bootnipets.com">bootnipets.com</a></div>-->
-            <!--            </div>-->
-
             <div class="panel panel-default">
-                <div class="panel-heading">Настройки <i class="fa fa-link fa-1x"></i></div>
                 <ul class="list-group">
                     <li class="list-group-item text-left" ><a data-toggle="tab" href="#home">Личные данные</a></li>
                     <li class="list-group-item text-left"><a data-toggle="tab" href="#settings">Приватность</a></li>
-
-                    <!--                <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>-->
-                    <!--                <li class="list-group-item text-right"><span class="pull-left"><strong>Shares</strong></span> 125</li>-->
-                    <!--                <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> 13</li>-->
-                    <!--                <li class="list-group-item text-right"><span class="pull-left"><strong>Posts</strong></span> 37</li>-->
-                    <!--                <li class="list-group-item text-right"><span class="pull-left"><strong>Followers</strong></span> 78</li>-->
                 </ul>
 
             </div>
-
-            <!--            <div class="panel panel-default">-->
-            <!--                <div class="panel-heading">Social Media</div>-->
-            <!--                <div class="panel-body">-->
-            <!--                    <i class="fa fa-facebook fa-2x"></i> <i class="fa fa-github fa-2x"></i> <i class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i> <i class="fa fa-google-plus fa-2x"></i>-->
-            <!--                </div>-->
-            <!--            </div>-->
-
         </div><!--/col-3-->
         <div class="col-sm-9">
 
             <div class="tab-content">
                 <div class="tab-pane active" id="home">
-                    <hr>
+                    <header style="margin-bottom: 20px">
+                        <div class="navbar navbar-dark shadow-sm" style="background: white">
+                            <div class="container d-flex justify-content-center">
+                                <h1 style="text-align: center; color: #173d7b;">Личные данные</h1>
+                            </div>
+                        </div>
+                    </header>
                     <form class="form" action="##" method="post" id="registrationForm">
-
+<div class="container">
+    <div class="row">
+        <div class="col">
                         <div class="form-group">
-                            <div class="col-xs-6">
                                 <label for="last_name"><h4>Имя</h4></label>
                                 <input type="text" class="form-control" name="last_name" id="last_name" placeholder="" title="enter your last name if any.">
                             </div>
                         </div>
-                        <div class="form-group">
-
-                            <div class="col-xs-6">
+        <div class="col">
+        <div class="form-group">
                                 <label for="first_name"><h4>Фамилия</h4></label>
                                 <input type="text" class="form-control" name="first_name" id="first_name" placeholder="" title="enter your first name if any.">
                             </div>
                         </div>
+    </div>
+    <div class="row">
+        <div class="col">
                         <div class="form-group">
 
-                            <div class="col-xs-6">
+
                                 <label for="email"><h4>Электронная почта</h4></label>
                                 <input type="email" class="form-control" name="email" id="email" placeholder="" title="enter your email.">
                             </div>
                         </div>
-
+        <div class="col">
                         <div class="form-group">
-
-                            <div class="col-xs-6">
                                 <label for="phone"><h4>Номер телефона</h4></label>
                                 <input type="text" class="form-control" name="phone" id="phone" placeholder="" title="enter your phone number if any.">
                             </div>
                         </div>
-                        <div class="form-group">
-
-                            <div class="col-xs-6">
+    </div>
+    <div class="row">
+        <div class="col">
+        <div class="form-group">
                                 <label for="uni"><h4>Учебное заведение</h4></label>
                                 <input type="text" class="form-control" name="phone" id="uni" placeholder="" title="enter your phone number if any.">
                             </div>
                         </div>
-                        <div class="form-group">
-
+        <div class="col">
+        <div class="form-group">
                             <div class="col-xs-6">
                                 <label for="phone"><h4>Группа</h4></label>
                                 <input type="text" class="form-control" name="group" id="group" placeholder="" title="enter your number of group">
                             </div>
                         </div>
+    </div>
+    </div>
                         <div class="form-group">
                             <div class="col-xs-12">
                                 <br>
-                                <button class="btn btn-lg" type="submit" style="    background-color: #d3008d !important;
+                                <button class="btn btn-lg" type="submit" style="background-color: #173d7b !important;
     border-radius: 30px !important;color: white;"><i class="glyphicon glyphicon-ok-sign" style="color: white;"></i> Сохранить</button>
                                 <button class="btn btn-lg" type="reset" style="border-radius: 30px !important; color:white;"><i class="glyphicon glyphicon-repeat" style="color: white"></i> Сбросить</button>
                             </div>
                         </div>
+</div>
                     </form>
 
-                    <hr>
 
                 </div><!--/tab-pane-->
                 <div class="tab-pane" id="settings">
-
-                    <h2></h2>
-
-                    <hr>
-                    <form class="form" action="##" method="post" id="registrationForm">
+                    <header style="margin-bottom: 20px">
+                        <div class="navbar navbar-dark shadow-sm" style="background: white">
+                            <div class="container d-flex justify-content-center">
+                                <h1 style="text-align: center; color: #173d7b;">Приватность</h1>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="container">
+                    <form class="form" action="##" method="post" id="registrationForm2">
                         <div class="form-group">
-
                             <div class="col-xs-6">
                                 <label for="email"><h4>Логин</h4></label>
                                 <input type="login" class="form-control" id="login" placeholder="" title="enter a login">
@@ -130,21 +140,24 @@
                         <div class="form-group">
                             <div class="col-xs-12">
                                 <br>
-                                <button class="btn btn-lg" type="submit" style="    background-color: #d3008d !important;
+                                <button class="btn btn-lg" type="submit" style="    background-color: #173d7b !important;
     border-radius: 30px !important;color: white;"><i class="glyphicon glyphicon-ok-sign" style="color: white;"></i> Сохранить</button>
                                 <button class="btn btn-lg" type="reset" style="border-radius: 30px !important; color:white;"><i class="glyphicon glyphicon-repeat" style="color: white"></i> Сбросить</button>
                             </div>
                         </div>
                     </form>
-                    <form class="form" action="##" method="post" id="registrationForm">
+                    <div class="form" action="##" method="post" id="registrationForm">
 
+<div class="row">
+    <div class="col">
                         <div class="form-group">
-
                             <div class="col-xs-6">
                                 <label for="password"><h4>Пароль</h4></label>
                                 <input type="password" class="form-control" name="password" id="password" placeholder="" title="enter your password.">
                             </div>
                         </div>
+    </div>
+        <div class="col">
                         <div class="form-group">
 
                             <div class="col-xs-6">
@@ -152,16 +165,19 @@
                                 <input type="password" class="form-control" name="password2" id="password2" placeholder="" title="enter your password2.">
                             </div>
                         </div>
+                    </div>
+</div>
+
                         <div class="form-group">
                             <div class="col-xs-12">
                                 <br>
-                                <button class="btn btn-lg" type="submit" style="    background-color: #d3008d !important;
+                                <button class="btn btn-lg" type="submit" style="    background-color: #173d7b !important;
     border-radius: 30px !important;color: white;"><i class="glyphicon glyphicon-ok-sign" style="color: white;"></i> Сохранить</button>
                                 <button class="btn btn-lg" type="reset" style="border-radius: 30px !important; color:white;"><i class="glyphicon glyphicon-repeat" style="color: white"></i> Сбросить</button>
                             </div>
                         </div>
                     </form>
-
+                    </div>
                 </div><!--/tab-pane-->
 
             </div><!--/tab-content-->
@@ -169,5 +185,9 @@
         </div><!--/col-9-->
     </div><!--/row-->
 </div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 </body>
 </html>

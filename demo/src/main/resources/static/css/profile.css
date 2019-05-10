@@ -2,7 +2,6 @@
     margin: 20px 0;
 }
 
-/* Profile sidebar */
 .profile-sidebar {
     padding: 20px 0 10px 0;
     background: #fff;
@@ -26,8 +25,8 @@
 }
 
 .profile-usertitle-name {
-    color: #5a7391;
-    font-size: 16px;
+    color: darkslategrey;
+    font-size: 23px;
     font-weight: 600;
     margin-bottom: 7px;
 }
@@ -72,7 +71,7 @@ input.btn.btn-primary.btn-block{
     border-bottom: none;
 }
 
-.profile .usermenu ul li a {
+.profile-usermenu ul li a {
     color: #93a3b5;
     font-size: 14px;
     font-weight: 400;
@@ -97,4 +96,63 @@ input.btn.btn-primary.btn-block{
     background-color: #f6f9fb;
     border-left: 2px solid #5b9bd1;
     margin-left: -2px;
+}
+
+.jumbotron {
+    padding-top: 3rem;
+    margin-bottom: 0 !important;
+    background-color: #d5ebff !important;
+}
+@media (min-width: 768px) {
+    .jumbotron {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 90% !important;
+    }
+}
+
+.jumbotron p:last-child {
+    margin-bottom: 0;
+}
+
+.jumbotron-heading {
+    font-weight: 300;
+}
+
+.jumbotron .container {
+    max-width: 40rem;
+}
+
+footer {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+footer p {
+    margin-bottom: .25rem;
+}
+/*nav*/
+.navbar{
+    background:none;
+}
+.nav-link , .navbar-brand{
+    color: #173d7b;
+    cursor: pointer;
+}
+.nav-link{
+    margin-right: 1em !important;
+}
+.nav-link:hover{
+    color: #1125a2;
+}
+.navbar-collapse{
+    justify-content: flex-end;
+}
+.navbar-toggler{
+    background:#fff !important;
 }

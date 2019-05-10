@@ -30,7 +30,6 @@ public class AuthController {
                 .login(username)
                 .password(password)
                 .build();
-
         String cookieValue = usersService.signIn(signInForm);
         if (cookieValue != null) {
             Cookie auth = new Cookie("auth", cookieValue);

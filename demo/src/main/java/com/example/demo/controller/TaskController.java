@@ -37,6 +37,10 @@ public class TaskController {
         ArrayList<String> fileStr = new ArrayList<>();
         while (scanner.hasNextLine()) {
             String string = scanner.nextLine();
+            if(random.nextInt(100) == 1){
+                String[] str = string.split(" ");
+                string = string.replace(str[random.nextInt(str.length)], "<p><input></p>");
+            }
             fileStr.add(string);
         }
         model.addAttribute("files", fileStr);

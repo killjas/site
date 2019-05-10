@@ -1,4 +1,7 @@
-
+/*body{*/
+/*    background: url(../../image/homeback2.png) no-repeat;*/
+/*    background-size: cover;*/
+/*}*/
 svg:not(:root) {
     overflow: hidden;
 }
@@ -18,7 +21,12 @@ svg:not(:root) {
     padding-top: 100px;
 }
 
-
+/*@media(min-width: 576px) .col-sm-6 {*/
+/*        -webkit-box-flex: 0;*/
+/*        -ms-flex: 0 0 50%;*/
+/*        flex: 0 0 50%;*/
+/*        max-width: 50%;*/
+/*    }*/
 
 .col-sm-6{
     position: relative;
@@ -35,20 +43,17 @@ svg:not(:root) {
     font-size: 48px;
 }
 .intro-text .lead {
-    /*color: #E1CEFF;*/
-    color: #173d7b;
-
+    color: darkslategrey;
+    line-height: 1.5;
 }
 
+
 .lead {
-    font-size: 26px;
-}
-.lead {
-    font-size: 1.25rem;
+    font-size: 2rem;
     font-weight: 300;
 }
 h4, .h4 {
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     margin-bottom: 0.5rem;
@@ -114,4 +119,45 @@ p {
 img {
     vertical-align: middle;
     border-style: none;
+}
+
+.btn-primary {
+    background-color: #173d7b !important;
+    border-radius: 30px !important;
+    width: 300px !important;
+    height: 40px !important;
+    border: none !important;
+    margin: 30px;
+}
+
+input.btn.btn-primary.btn-block{
+    text-align: center !important;
+}
+
+.btn-primary:focus,.btn:active {
+    outline: none !important;
+    box-shadow: none;
+}
+
+
+/*nav*/
+.navbar{
+    background:none;
+}
+.nav-link , .navbar-brand{
+    color: #173d7b;
+    cursor: pointer;
+}
+.nav-link{
+    margin-right: 1em !important;
+}
+.nav-link:hover{
+    background: #f4f4f4;
+    color: #1125a2;
+}
+.navbar-collapse{
+    justify-content: flex-end;
+}
+.navbar-toggler{
+    background:#fff !important;
 }

@@ -35,11 +35,6 @@ public class MainController {
         return "editProfilePage";
     }
 
-    @GetMapping("/newProject")
-    public String newProject() {
-        return "newproject";
-    }
-
     @GetMapping("/profile")
     public String profile() {
         return "profile";

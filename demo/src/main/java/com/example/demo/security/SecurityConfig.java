@@ -34,7 +34,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/signUp").permitAll()
-                .antMatchers("/home").authenticated()
+                .antMatchers("/").authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/signIn")
@@ -42,9 +42,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .passwordParameter("pass")
                 .failureUrl("/signIn?error")
                 .permitAll()
-                .defaultSuccessUrl("/home")
+                .defaultSuccessUrl("/")
                 .and()
-                .logout().logoutSuccessUrl("/signIn")
+                .logout().logoutSuccessUrl("/signIn").deleteCookies("auth")
                 .permitAll();
     }
 
