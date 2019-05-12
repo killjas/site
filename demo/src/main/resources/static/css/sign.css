@@ -15,7 +15,7 @@ body {
     background-color: #d5ebff;
 }
 
-.p{
+.p {
     margin-top: 16px;
     margin-bottom: 16px;
 }
@@ -26,30 +26,35 @@ body {
     padding: 15px;
     margin: auto;
 }
+
 .form-signin .checkbox {
     font-weight: 400;
     border-radius: 30px;
 
 }
+
 .form-signin .feedback_input {
     position: relative;
     box-sizing: border-box;
     padding: 10px;
     font-size: 16px;
-    width: 500px; height: 50px;
+    width: 500px;
+    height: 50px;
     border-radius: 30px;
     background-color: #E5E5E5;
-    overflow:visible;
+    overflow: visible;
 }
+
 .form-signin .feedback_input:focus {
     z-index: 2;
 }
+
 .form-signin .feedback_input :active, :hover, :focus {
     outline-offset: 0;
-    outline : none;
+    outline: none;
 }
 
-.btn-primary{
+.btn-primary {
     background-color: #d3008d !important;
     border-radius: 30px !important;
     width: 340px !important;
@@ -57,15 +62,14 @@ body {
     border: none !important;
 }
 
-input.btn.btn-primary.btn-block{
+input.btn.btn-primary.btn-block {
     text-align: center !important;
 }
 
-.btn-primary:focus,.btn:active {
+.btn-primary:focus, .btn:active {
     outline: none !important;
     box-shadow: none;
 }
-
 
 
 .form-label-group {
@@ -94,6 +98,7 @@ input.btn.btn-primary.btn-block{
     border-radius: .25rem;
     transition: all .1s ease-in-out;
 }
+
 .form-label-group input::-webkit-input-placeholder {
     color: transparent;
 }
@@ -132,6 +137,7 @@ input.btn.btn-primary.btn-block{
     .form-label-group > label {
         display: none;
     }
+
     .form-label-group input::-ms-input-placeholder {
         color: #777;
     }
@@ -143,6 +149,7 @@ input.btn.btn-primary.btn-block{
     .form-label-group > label {
         display: none;
     }
+
     .form-label-group input:-ms-input-placeholder {
         color: #777;
     }
@@ -160,12 +167,21 @@ input.btn.btn-primary.btn-block{
     margin: 0;
     width: 100% !important;
 }
-.files input:focus{     outline: 2px dashed #92b0b3;  outline-offset: -10px;
+
+.files input:focus {
+    outline: 2px dashed #92b0b3;
+    outline-offset: -10px;
     -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
-    transition: outline-offset .15s ease-in-out, background-color .15s linear; border:1px solid #92b0b3;
+    transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    border: 1px solid #92b0b3;
 }
-.files{ position:relative}
-.files:after {  pointer-events: none;
+
+.files {
+    position: relative
+}
+
+.files:after {
+    pointer-events: none;
     position: absolute;
     top: 60px;
     left: 0;
@@ -179,11 +195,16 @@ input.btn.btn-primary.btn-block{
     background-size: 100%;
     background-repeat: no-repeat;
 }
-.color input{ background-color:#f1f1f1;}
+
+.color input {
+    background-color: #f1f1f1;
+}
+
 .files:before {
     position: absolute;
     bottom: 10px;
-    left: 0;  pointer-events: none;
+    left: 0;
+    pointer-events: none;
     width: 100%;
     right: 0;
     height: 57px;
@@ -216,10 +237,11 @@ input.btn.btn-primary.btn-block{
     outline: none;
 
 }
+
 .close:before {
     color: rgba(255, 255, 255, 0.9);
     content: "X";
-    font-family:  Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     font-weight: normal;
     text-decoration: none;
@@ -228,6 +250,7 @@ input.btn.btn-primary.btn-block{
     -moz-transition: all 0.5s;
     transition: all 0.5s;
 }
+
 /* кнопка закрытия при наведении */
 .close:hover {
     background-color: rgba(252, 20, 0, 0.8);

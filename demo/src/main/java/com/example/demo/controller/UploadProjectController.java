@@ -30,7 +30,14 @@ public class UploadProjectController {
 
     @RequestMapping(value = "/newProject", method = RequestMethod.POST)
     public String upload(HttpServletRequest request, Model model, @RequestParam("files") MultipartFile[] files, @RequestParam("projectName") String projectName) {
-        long id = 6;
+        Cookie cookie = null;
+        Cookie[] cookies = request.getCookies();
+        for (Cookie value : cookies) {
+            if (value.getName().equals("auth")) {
+                cookie = value;
+            }
+        }
+        long id = usersService.findUserByCookie(cookie.getValue()).getId();
         StringBuilder fileNames = new StringBuilder();
         String uploadDirectory = System.getProperty("user.dir") + "/uploads" + "/" + projectName;
         File path = new File(uploadDirectory);
@@ -45,7 +52,7 @@ public class UploadProjectController {
             }
         }
 //        if (id != null) {
-            usersService.addProject(id, projectName);
+        usersService.addProject(id, projectName);
 //        }
         model.addAttribute("msg", "Successfully uploaded files ");
         return "uploadResult";

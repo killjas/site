@@ -35,13 +35,9 @@ public class MainController {
         return "editProfilePage";
     }
 
-    @GetMapping("/profile")
-    public String profile() {
-        return "profile";
-    }
-
     @GetMapping("/signUp")
     public String signUp() {
         return "signUp";
     }
+
 }

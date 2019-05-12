@@ -2,14 +2,96 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Просмотр</title>
+    <link href="/css/task.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<div th:if="${files}">
-    <tr th:each="file:${files}">
-        <a th:utext="${file}"></a>
-        <br>
-    </tr>
+<div class="album py-5 bg-light" style="padding: 10px !important;">
+    <div class="card mb-4 shadow-sm">
+
+        <!--<div class="w3-example">-->
+        <!--    <h3>Название проекта</h3>-->
+        <header class="blog-header">
+            <div class="navbar navbar-dark shadow-sm">
+                <div class="col-4 pt-1">
+                    <ul class="navbar-nav mr-4">
+                        <li class="nav-item">
+                            <a class="nav-link " href="/profile">Профиль</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/signUp">Регистрация</a>
+                        </li>
+                        <div th:if="${loged}">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/logout">Выход</a>
+                            </li>
+                        </div>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/home">Главная</a>
+                        </li>
+                    </ul>
+                    <a href="#" class="navbar-brand">
+                        <!--Кнопка Назад-->
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                             width="50" height="50"
+                             viewBox="0 0 192 192"
+                             style=" fill:#000000;">
+                            <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                               stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                               stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                               font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                <path d="M0,192v-192h192v192z"
+                                      fill="none"></path>
+                                <g fill="#6c757d">
+                                    <g id="surface1">
+                                        <path d="M76.08,50.28c-0.84,0.15 -1.59,0.57 -2.16,1.2l-41.88,41.76l-2.64,2.76l2.64,2.76l41.88,41.76c0.93,1.14 2.415,1.665 3.855,1.335c1.425,-0.33 2.55,-1.455 2.88,-2.88c0.33,-1.44 -0.195,-2.925 -1.335,-3.855l-35.28,-35.28h113.4c1.38,0.015 2.67,-0.705 3.375,-1.905c0.69,-1.2 0.69,-2.67 0,-3.87c-0.705,-1.2 -1.995,-1.92 -3.375,-1.905h-113.4l35.28,-35.28c1.245,-1.155 1.575,-2.985 0.825,-4.5c-0.735,-1.53 -2.4,-2.37 -4.065,-2.1z"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                        <!-- -->
+                    </a>
+                </div>
+
+                <strong class="navbar-brand d-flex align-items-center" style="color:#6c757d;">Название
+                    проекта</strong>
+
+                <div class="col-4 d-flex justify-content-end align-items-center"></div>
+            </div>
+
+        </header>
+
+        <div class="card-body">
+            <div class="tabs">
+                <!--            Tab (сколько файлов - столько табов, для каждого свой section со своим id-ником content-tabN)    -->
+                <input id="tab1" type="radio" name="tabs" checked>
+                <label for="tab1" title="Вкладка ">Вкладка</label>
+                <!-- -->
+                <!--                <input id="tab2" type="radio" name="tabs">-->
+                <!--                <label for="tab2" title="Вкладка 2">Вкладка 2</label>-->
+
+                <section id="content-tab1">
+                    <div class="w3-code notranslate htmlHigh"
+                         style=" width:100%; overflow : auto;     height: calc(100vh - 270px);">
+                    <pre><code>
+                        <div th:each="file:${files}" th:text="file"></div>
+                        <!--                        Сюда вывод текста-->
+                        <!--        если встречается < заменяем на &lt; , > &gt; , " &quot; , пробел &nbsp;-->
+                        <!--                        &lt;form action=&quot;/action_page.php&quot;&gt;-->
+                        <!--                        &nbsp;&lt;input type=&quot;text&quot; name=&quot;fname&quot; placeholder=&quot;First name&quot;&gt;&lt;br&gt;-->
+                        <!--                        &nbsp;&lt;input type=&quot;text&quot; name=&quot;lname&quot; placeholder=&quot;Last name&quot;&gt;&lt;br&gt;-->
+                        <!--                        &nbsp;&lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;-->
+                        <!--                        &lt;/form&gt;&nbsp;-->
+                </code></pre>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+    </div>
+</div>
 </div>
 </body>
 </html>

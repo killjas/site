@@ -14,7 +14,7 @@ public class ProjectRepositoryImpl implements ProjectRepository {
     JdbcTemplate jdbcTemplate;
     //language=SQL
     private static final String SQL_FIND_ALL_PROJECTS =
-            "select * from project left join person_project pp on project.id = pp.project_id;";
+            "select * from project left join person_project pp on project.id = pp.project_id where pp.person_id=?;";
 
     private RowMapper<Project> projectRowMapper = (resultSet, i) -> Project.builder()
             .id(resultSet.getLong("id"))
@@ -29,7 +29,7 @@ public class ProjectRepositoryImpl implements ProjectRepository {
     }
 
     @Override
-    public List findAllProjects() {
+    public List findAllProjects(long personId) {
         return jdbcTemplate.query(SQL_FIND_ALL_PROJECTS, projectRowMapper);
     }
 

@@ -13,8 +13,8 @@ public class ProjectServiceImpl implements ProjectService {
     ProjectRepository projectRepository;
 
     @Override
-    public List<Project> findAll() {
-        return projectRepository.findAllProjects();
+    public List<Project> findAll(long id) {
+        return projectRepository.findAllProjects(id);
     }
 
     @Override

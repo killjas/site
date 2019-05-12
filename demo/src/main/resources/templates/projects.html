@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+<h1>Projects List</h1>
+<tr th:each="project:${projects}">
+    <form method="post">
+        <label>
+            <input style="display: none" th:value="${project.name}" name="projectName"/>
+        </label>
+        <a th:text="${project.name}"></a>
+        <p th:text="${project.fullInfo}"></p>
+        <input type="submit" value="Run project" formmethod="post">
+    </form>
+</tr>
+</body>
+</html>

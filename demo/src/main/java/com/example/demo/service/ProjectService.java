@@ -5,6 +5,6 @@ import com.example.demo.model.Project;
 import java.util.List;
 
 public interface ProjectService {
-    List<Project> findAll();
+    List<Project> findAll(long id);
     List<Project> findById();
 }

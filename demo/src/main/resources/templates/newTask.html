@@ -1,20 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Просмотр</title>
     <link href="/css/task.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 <body>
-<div class="album py-5 bg-light" style="padding: 10px !important;">
-    <div class="card mb-4 shadow-sm">
-
-        <!--<div class="w3-example">-->
-        <!--    <h3>Название проекта</h3>-->
+<div class="album py-5 bg-light" style="padding:0 !important;">
         <header class="blog-header">
-            <div class="navbar navbar-dark shadow-sm">
+            <div class="navbar navbar-dark shadow-sm" style="padding:0 !important;">
                 <div class="col-4 pt-1">
                     <a href="#" class="navbar-brand">
                         <!--Кнопка Назад-->
@@ -57,22 +55,20 @@
                 <!--                <label for="tab2" title="Вкладка 2">Вкладка 2</label>-->
 
                 <section id="content-tab1">
-                    <div class="w3-code notranslate htmlHigh" style=" width:100%; overflow : auto;     height: calc(100vh - 270px);">
-                    <pre><code>
-<!--                        Сюда вывод текста-->
-                        <!--        если встречается < заменяем на &lt; , > &gt; , " &quot; , пробел &nbsp;-->
-                        &lt;form action=&quot;/action_page.php&quot;&gt;
-                        &nbsp;&lt;input type=&quot;text&quot; name=&quot;fname&quot; placeholder=&quot;First name&quot;&gt;&lt;br&gt;
-                        &nbsp;&lt;input type=&quot;text&quot; name=&quot;lname&quot; placeholder=&quot;Last name&quot;&gt;&lt;br&gt;
-                        &nbsp;&lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;
-                        &lt;/form&gt;&nbsp;
-                </code></pre>
+                    <div class="w3-code notranslate htmlHigh" style=" width:100%; height: calc(100vh - 30%); border-left: none !important; ">
+                    <textarea>
+
+                    </textarea>
+                        <button style="width: 30px;height: 30px;" title="Проверить"><i class="fas fa-play" style="color: #173d7b; size: 30px"></i></button>
                     </div>
                 </section>
-
+            </div>
+            <div class="container" style="background-color: black; height: 20vh; margin:10px 20px 0 20px; max-width: 97% !important;">
+                <p>Вывод</p>
             </div>
         </div>
     </div>
-</div>
+
+
 </body>
 </html>

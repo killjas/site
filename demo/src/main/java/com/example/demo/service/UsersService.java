@@ -15,7 +15,7 @@ public interface UsersService {
 
     void addProject(Long userId, String projectName);
 
-    Long findUserIdByCookie(String value);
+    User findUserByCookie(String value);
 
     List<String> getUsersProjects(Long userId);
 }

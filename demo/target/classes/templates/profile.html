@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
-    <title>Bootstrap Example</title>
+    <title>Profile</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/profile.css">
@@ -15,7 +15,7 @@
 </head>
 <body style="background: #f6f9fb">
 <nav class="navbar navbar-expand-lg fixed-top">
-    <a class="navbar-brand" href="#" style="padding-left: 30px; margin-right: 5px"><img src="/image/logopng.png"
+    <a class="navbar-brand" href="#" style="padding-left: 30px; margin-right: 5px"><img src="../image/logopng.png"
                                                                                         style="width: 50px; height: 50px"></a>
     <strong style="color: #173d7b; font-size: 1.6rem">ITIS HUB</strong>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -25,7 +25,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-4">
             <li class="nav-item">
-                <a class="nav-link " href="#">Выход</a>
+                <a class="nav-link " href="/logout">Выход</a>
             </li>
         </ul>
     </div>
@@ -43,14 +43,17 @@
                     <div class="profile-usertitle-name">
                         Имя Фамилия
                     </div>
+                    <div class="profile-usertitle-job">
+                        Роль
+                    </div>
                 </div>
             </div>
-            </hr><br>
+            <br>
 
             <div class="panel panel-default shadow-sm">
                 <ul class="list-group">
-                    <li class="list-group-item text-left"><a href="/editProfilePage"><span class="pull-left"><strong>Настройки</strong></span></a>
-                    </li>
+                    <li class="list-group-item text-left"><a href="/editProfilePage"><span
+                            class="pull-left"><strong>Настройки</strong></span></a></li>
                 </ul>
             </div>
 
@@ -74,9 +77,8 @@
                                 <header>
                                     <div class="navbar navbar-dark shadow-sm">
                                         <div class="container d-flex justify-content-between">
-                                            <a th:href="@{'/user?userId=' + ${project.userId}}"
-                                               class="navbar-brand d-flex align-items-center">
-                                                <img src="/image/no-avatar.png"
+                                            <a href="#" class="navbar-brand d-flex align-items-center">
+                                                <img src="../image/no-avatar.png"
                                                      style="width: 20px; height:20px; border-radius: 100px; margin-right: 10px;">
                                                 <strong style="color:#6c757d;">Album</strong>
                                             </a>
@@ -95,6 +97,7 @@
                                                     aria-haspopup="true" aria-expanded="false">more_vert
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item" href="#">Посмотреть</a>
                                                 <a class="dropdown-item" href="#">Редактировать</a>
                                                 <a class="dropdown-item" href="#">Удалить</a>
                                             </div>
@@ -106,7 +109,9 @@
                     </div>
                 </div>
             </div>
+
         </div>
+
     </div>
 </div>
 </div>

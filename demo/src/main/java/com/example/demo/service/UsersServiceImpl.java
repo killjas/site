@@ -84,8 +84,8 @@ public class UsersServiceImpl implements UsersService {
     }
 
     @Override
-    public Long findUserIdByCookie(String value){
-        return usersRepository.findByCookie(value).get().getId();
+    public User findUserByCookie(String value){
+        return usersRepository.findByCookie(value).get();
     }
     @Override
     public List<String> getUsersProjects(Long userId){

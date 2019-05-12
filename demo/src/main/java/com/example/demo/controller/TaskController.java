@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,6 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -20,8 +23,12 @@ import java.util.Scanner;
 @Controller
 public class TaskController {
     @GetMapping("/task")
-    public String index(Model model) throws IOException {
-
+    public String index(Model model, HttpServletRequest request) throws IOException {
+        Cookie cookie[] = request.getCookies();
+        for (Cookie cook : cookie) {
+            if (cook.getName().equals("auth")) ;
+            model.addAttribute("loged", "loged");
+        }
         String path = System.getProperty("user.dir") + "\\task";
 
         File file = new File(path);
@@ -37,10 +44,14 @@ public class TaskController {
         ArrayList<String> fileStr = new ArrayList<>();
         while (scanner.hasNextLine()) {
             String string = scanner.nextLine();
-            if(random.nextInt(100) == 1){
+            if (random.nextInt(100) == 1) {
                 String[] str = string.split(" ");
                 string = string.replace(str[random.nextInt(str.length)], "<p><input></p>");
             }
+            string.replace("<", "&lt;");
+            string.replace(" ", "&nbsp;");
+            string.replace("\"", "&quot;");
+            string.replace(">", "&gt;");
             fileStr.add(string);
         }
         model.addAttribute("files", fileStr);

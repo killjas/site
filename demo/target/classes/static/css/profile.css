@@ -17,7 +17,11 @@
     border-radius: 50% !important;
     text-align: center;
 }
-.center {display:block; margin:0 auto;}
+
+.center {
+    display: block;
+    margin: 0 auto;
+}
 
 .profile-usertitle {
     text-align: center;
@@ -39,18 +43,19 @@
     margin-bottom: 15px;
 }
 
-.btn-primary{
+.btn-primary {
     background-color: #d3008d !important;
     border-radius: 30px !important;
-    display:block; margin:0 auto !important;
+    display: block;
+    margin: 0 auto !important;
     border: none !important;
 }
 
-input.btn.btn-primary.btn-block{
+input.btn.btn-primary.btn-block {
     text-align: center !important;
 }
 
-.btn-primary:focus,.btn:active {
+.btn-primary:focus, .btn:active {
     outline: none !important;
     box-shadow: none;
 }
@@ -103,6 +108,7 @@ input.btn.btn-primary.btn-block{
     margin-bottom: 0 !important;
     background-color: #d5ebff !important;
 }
+
 @media (min-width: 768px) {
     .jumbotron {
         padding-top: 6rem;
@@ -136,23 +142,29 @@ footer {
 footer p {
     margin-bottom: .25rem;
 }
+
 /*nav*/
-.navbar{
-    background:none;
+.navbar {
+    background: none;
 }
-.nav-link , .navbar-brand{
+
+.nav-link, .navbar-brand {
     color: #173d7b;
     cursor: pointer;
 }
-.nav-link{
+
+.nav-link {
     margin-right: 1em !important;
 }
-.nav-link:hover{
+
+.nav-link:hover {
     color: #1125a2;
 }
-.navbar-collapse{
+
+.navbar-collapse {
     justify-content: flex-end;
 }
-.navbar-toggler{
-    background:#fff !important;
+
+.navbar-toggler {
+    background: #fff !important;
 }

@@ -1,5 +1,8 @@
-.form-group .col-xs-6 .input{border-radius: 30px !important;}
-h4{
+.form-group .col-xs-6 .input {
+    border-radius: 30px !important;
+}
+
+h4 {
     font-size: 1.3rem !important;
 }
 
@@ -25,22 +28,27 @@ h4{
 }
 
 /*nav*/
-.navbar{
-    background:none;
+.navbar {
+    background: none;
 }
-.nav-link , .navbar-brand{
+
+.nav-link, .navbar-brand {
     color: #173d7b;
     cursor: pointer;
 }
-.nav-link{
+
+.nav-link {
     margin-right: 1em !important;
 }
-.nav-link:hover{
+
+.nav-link:hover {
     color: #1125a2;
 }
-.navbar-collapse{
+
+.navbar-collapse {
     justify-content: flex-end;
 }
-.navbar-toggler{
-    background:#fff !important;
+
+.navbar-toggler {
+    background: #fff !important;
 }

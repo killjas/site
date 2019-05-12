@@ -5,13 +5,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/editProfile.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body style="background: #f6f9fb">
 <nav class="navbar navbar-expand-lg fixed-top">
-    <a class="navbar-brand" href="#" style="padding-left: 30px; margin-right: 5px"><img src="/image/logopng.png" style="width: 50px; height: 50px"></a>
+    <a class="navbar-brand" href="#" style="padding-left: 30px; margin-right: 5px"><img src="/image/logopng.png"
+                                                                                        style="width: 50px; height: 50px"></a>
     <strong style="color: #173d7b; font-size: 1.6rem">ITIS HUB</strong>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -29,7 +32,8 @@
         <div class="col-sm-3"><!--left col-->
 
             <div class="text-center">
-                <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar" style="border-radius: 100px">
+                <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail"
+                     alt="avatar" style="border-radius: 100px">
                 <input type="file" class="text-center center-block file-upload" style="margin-top: 10px">
                 <div class="profile-usertitle" style="margin-top: 15px">
                     <div class="profile-usertitle-name">
@@ -39,11 +43,12 @@
                         Роль
                     </div>
                 </div>
-            </div></hr><br>
+            </div>
+            </hr><br>
 
             <div class="panel panel-default">
                 <ul class="list-group">
-                    <li class="list-group-item text-left" ><a data-toggle="tab" href="#home">Личные данные</a></li>
+                    <li class="list-group-item text-left"><a data-toggle="tab" href="#home">Личные данные</a></li>
                     <li class="list-group-item text-left"><a data-toggle="tab" href="#settings">Приватность</a></li>
                 </ul>
 
@@ -61,62 +66,73 @@
                         </div>
                     </header>
                     <form class="form" action="##" method="post" id="registrationForm">
-<div class="container">
-    <div class="row">
-        <div class="col">
-                        <div class="form-group">
-                                <label for="last_name"><h4>Имя</h4></label>
-                                <input type="text" class="form-control" name="last_name" id="last_name" placeholder="" title="enter your last name if any.">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="last_name"><h4>Имя</h4></label>
+                                        <input type="text" class="form-control" name="last_name" id="last_name"
+                                               placeholder="" title="enter your last name if any.">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="first_name"><h4>Фамилия</h4></label>
+                                        <input type="text" class="form-control" name="first_name" id="first_name"
+                                               placeholder="" title="enter your first name if any.">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-        <div class="col">
-        <div class="form-group">
-                                <label for="first_name"><h4>Фамилия</h4></label>
-                                <input type="text" class="form-control" name="first_name" id="first_name" placeholder="" title="enter your first name if any.">
-                            </div>
-                        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-                        <div class="form-group">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
 
 
-                                <label for="email"><h4>Электронная почта</h4></label>
-                                <input type="email" class="form-control" name="email" id="email" placeholder="" title="enter your email.">
+                                        <label for="email"><h4>Электронная почта</h4></label>
+                                        <input type="email" class="form-control" name="email" id="email" placeholder=""
+                                               title="enter your email.">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="phone"><h4>Номер телефона</h4></label>
+                                        <input type="text" class="form-control" name="phone" id="phone" placeholder=""
+                                               title="enter your phone number if any.">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="uni"><h4>Учебное заведение</h4></label>
+                                        <input type="text" class="form-control" name="phone" id="uni" placeholder=""
+                                               title="enter your phone number if any.">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="col-xs-6">
+                                            <label for="phone"><h4>Группа</h4></label>
+                                            <input type="text" class="form-control" name="group" id="group"
+                                                   placeholder="" title="enter your number of group">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <br>
+                                    <button class="btn btn-lg" type="submit" style="background-color: #173d7b !important;
+    border-radius: 30px !important;color: white;"><i class="glyphicon glyphicon-ok-sign" style="color: white;"></i>
+                                        Сохранить
+                                    </button>
+                                    <button class="btn btn-lg" type="reset"
+                                            style="border-radius: 30px !important; color:white;"><i
+                                            class="glyphicon glyphicon-repeat" style="color: white"></i> Сбросить
+                                    </button>
+                                </div>
                             </div>
                         </div>
-        <div class="col">
-                        <div class="form-group">
-                                <label for="phone"><h4>Номер телефона</h4></label>
-                                <input type="text" class="form-control" name="phone" id="phone" placeholder="" title="enter your phone number if any.">
-                            </div>
-                        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-        <div class="form-group">
-                                <label for="uni"><h4>Учебное заведение</h4></label>
-                                <input type="text" class="form-control" name="phone" id="uni" placeholder="" title="enter your phone number if any.">
-                            </div>
-                        </div>
-        <div class="col">
-        <div class="form-group">
-                            <div class="col-xs-6">
-                                <label for="phone"><h4>Группа</h4></label>
-                                <input type="text" class="form-control" name="group" id="group" placeholder="" title="enter your number of group">
-                            </div>
-                        </div>
-    </div>
-    </div>
-                        <div class="form-group">
-                            <div class="col-xs-12">
-                                <br>
-                                <button class="btn btn-lg" type="submit" style="background-color: #173d7b !important;
-    border-radius: 30px !important;color: white;"><i class="glyphicon glyphicon-ok-sign" style="color: white;"></i> Сохранить</button>
-                                <button class="btn btn-lg" type="reset" style="border-radius: 30px !important; color:white;"><i class="glyphicon glyphicon-repeat" style="color: white"></i> Сбросить</button>
-                            </div>
-                        </div>
-</div>
                     </form>
 
 
@@ -130,64 +146,86 @@
                         </div>
                     </header>
                     <div class="container">
-                    <form class="form" action="##" method="post" id="registrationForm2">
-                        <div class="form-group">
-                            <div class="col-xs-6">
-                                <label for="email"><h4>Логин</h4></label>
-                                <input type="login" class="form-control" id="login" placeholder="" title="enter a login">
+                        <form class="form" action="##" method="post" id="registrationForm2">
+                            <div class="form-group">
+                                <div class="col-xs-6">
+                                    <label for="email"><h4>Логин</h4></label>
+                                    <input type="login" class="form-control" id="login" placeholder=""
+                                           title="enter a login">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-xs-12">
-                                <br>
-                                <button class="btn btn-lg" type="submit" style="    background-color: #173d7b !important;
-    border-radius: 30px !important;color: white;"><i class="glyphicon glyphicon-ok-sign" style="color: white;"></i> Сохранить</button>
-                                <button class="btn btn-lg" type="reset" style="border-radius: 30px !important; color:white;"><i class="glyphicon glyphicon-repeat" style="color: white"></i> Сбросить</button>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <br>
+                                    <button class="btn btn-lg" type="submit" style="    background-color: #173d7b !important;
+    border-radius: 30px !important;color: white;"><i class="glyphicon glyphicon-ok-sign" style="color: white;"></i>
+                                        Сохранить
+                                    </button>
+                                    <button class="btn btn-lg" type="reset"
+                                            style="border-radius: 30px !important; color:white;"><i
+                                            class="glyphicon glyphicon-repeat" style="color: white"></i> Сбросить
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                    </form>
-                    <div class="form" action="##" method="post" id="registrationForm">
+                        </form>
+                        <div class="form" action="##" method="post" id="registrationForm">
+                            <form>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <div class="col-xs-6">
+                                                <label for="password"><h4>Пароль</h4></label>
+                                                <input type="password" class="form-control" name="password"
+                                                       id="password"
+                                                       placeholder="" title="enter your password.">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
 
-<div class="row">
-    <div class="col">
-                        <div class="form-group">
-                            <div class="col-xs-6">
-                                <label for="password"><h4>Пароль</h4></label>
-                                <input type="password" class="form-control" name="password" id="password" placeholder="" title="enter your password.">
-                            </div>
+                                            <div class="col-xs-6">
+                                                <label for="password2"><h4>Повторите пароль</h4></label>
+                                                <input type="password" class="form-control" name="password2"
+                                                       id="password2"
+                                                       placeholder="" title="enter your password2.">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-xs-12">
+                                        <br>
+                                        <button class="btn btn-lg" type="submit" style="    background-color: #173d7b !important;
+    border-radius: 30px !important;color: white;"><i class="glyphicon glyphicon-ok-sign" style="color: white;"></i>
+                                            Сохранить
+                                        </button>
+                                        <button class="btn btn-lg" type="reset"
+                                                style="border-radius: 30px !important; color:white;"><i
+                                                class="glyphicon glyphicon-repeat" style="color: white"></i> Сбросить
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
+                    </div><!--/tab-pane-->
+
+                </div><!--/tab-content-->
+
+            </div><!--/col-9-->
+        </div><!--/row-->
     </div>
-        <div class="col">
-                        <div class="form-group">
-
-                            <div class="col-xs-6">
-                                <label for="password2"><h4>Повторите пароль</h4></label>
-                                <input type="password" class="form-control" name="password2" id="password2" placeholder="" title="enter your password2.">
-                            </div>
-                        </div>
-                    </div>
 </div>
-
-                        <div class="form-group">
-                            <div class="col-xs-12">
-                                <br>
-                                <button class="btn btn-lg" type="submit" style="    background-color: #173d7b !important;
-    border-radius: 30px !important;color: white;"><i class="glyphicon glyphicon-ok-sign" style="color: white;"></i> Сохранить</button>
-                                <button class="btn btn-lg" type="reset" style="border-radius: 30px !important; color:white;"><i class="glyphicon glyphicon-repeat" style="color: white"></i> Сбросить</button>
-                            </div>
-                        </div>
-                    </form>
-                    </div>
-                </div><!--/tab-pane-->
-
-            </div><!--/tab-content-->
-
-        </div><!--/col-9-->
-    </div><!--/row-->
-</div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
 
 </body>
 </html>
