@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top ">
+    <a class="navbar-brand" href="#" style="padding-left: 30px; margin-right: 5px"><img src="/image/logopng.png"
+                                                                                        style="width: 50px; height: 50px"></a>
+    <strong style="color: #173d7b; font-size: 1.6rem">ITIS HUB</strong>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-4">
+            <li class="nav-item">
+                <a class="nav-link " href="/signIn">Вход</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="/signUp">Регистрация</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<main role="main">
+    <section class="jumbotron text-center" style="padding-top: 130px ">
+        <div class="container">
+            <h1 style="color: darkslategrey;">Хранилище проектов</h1>
+            <p class="lead text-muted">В любое время все проекты доступны для просмотра и редактирования. Боитесь
+                потерять свой проект? Самое время залить его сюда.</p>
+            <p>
+                <a href="/newProject" class="btn btn-primary my-2" style="background-color: #173d7b !important;">Добавить
+                    проект</a>
+            </p>
+        </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <tr th:each="project : ${projects}">
+                    <div class="col-md-4">
+
+                        <div class="card mb-4 shadow-sm">
+                            <header>
+                                <div class="navbar navbar-dark shadow-sm">
+                                    <div class="container d-flex justify-content-between">
+                                        <a th:href="@{'/user?userId=' + ${project.userId}}"
+                                           class="navbar-brand d-flex align-items-center">
+                                            <img src="/image/no-avatar.png"
+                                                 style="width: 20px; height:20px; border-radius: 100px; margin-right: 10px;">
+                                            <strong style="color:#6c757d;">
+                                                <td th:text="${project.userId}"/>
+                                            </strong>
+                                        </a>
+                                    </div>
+                                </div>
+                            </header>
+                            <div class="card-body">
+                                <p class="card-text">
+                                <td th:text="${project.name}"/>
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="text-muted left">9 mins</small>
+                                    <div class="btn-group">
+                                        <a role="button" href="#" class="btn btn-primary my-2"
+                                           style="background-color: #6c757d !important;">Посмотреть</a>
+                                    </div>
+                                    <form method="post">
+                                        <label>
+                                            <input style="display: none" th:value="${project.name}" name="projectName"/>
+                                        </label>
+                                        <input type="submit" value="Run project" formmethod="post">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </tr>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

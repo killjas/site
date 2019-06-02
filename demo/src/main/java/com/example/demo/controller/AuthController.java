@@ -30,14 +30,9 @@ public class AuthController {
                 .login(username)
                 .password(password)
                 .build();
-        String cookieValue = usersService.signIn(signInForm);
-        if (cookieValue != null) {
-            Cookie auth = new Cookie("auth", cookieValue);
-            resp.addCookie(auth);
+
             return "redirect:/home";
-        } else {
-            return "redirect:/signIn";
-        }
+
     }
     @PostMapping("/signUp")
     public String signUp(@RequestParam(name = "username") String username, @RequestParam(name = "pass") String password) {
@@ -49,8 +44,8 @@ public class AuthController {
         return "redirect:/signIn";
     }
 
-    @GetMapping("/common/logout")
-    public String signUp(HttpServletRequest request, HttpServletResponse response) {
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request, HttpServletResponse response) {
         Cookie cookie = null;
         Cookie[] cookies = request.getCookies();
         for (int i = 0; i < cookies.length; i++) {

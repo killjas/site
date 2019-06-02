@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Bootstrap Example</title>
+    <title>Profile</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/profile.css">
@@ -15,7 +15,7 @@
 </head>
 <body style="background: #f6f9fb">
 <nav class="navbar navbar-expand-lg fixed-top">
-    <a class="navbar-brand" href="#" style="padding-left: 30px; margin-right: 5px"><img src="/image/logopng.png"
+    <a class="navbar-brand" href="#" style="padding-left: 30px; margin-right: 5px"><img src="../image/logopng.png"
                                                                                         style="width: 50px; height: 50px"></a>
     <strong style="color: #173d7b; font-size: 1.6rem">ITIS HUB</strong>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -25,7 +25,17 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-4">
             <li class="nav-item">
-                <a class="nav-link " href="#">Выход</a>
+                <a class="nav-link " href="/logout">Выход</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav mr-4">
+            <li class="nav-item">
+                <a class="nav-link " href="/home">Главная</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav mr-4">
+            <li class="nav-item">
+                <a class="nav-link " href="/signUp">Регистрация</a>
             </li>
         </ul>
     </div>
@@ -41,16 +51,22 @@
                      alt="avatar" style="border-radius: 100px">
                 <div class="profile-usertitle">
                     <div class="profile-usertitle-name">
-                        Имя Фамилия
+                        <p th:text="${user.getName()}"></p>
+
+                    </div>
+                    <div class="profile-usertitle-job">
+                        <p th:text="${user.getRole()}"></p>
                     </div>
                 </div>
             </div>
-            </hr><br>
+            <br>
 
             <div class="panel panel-default shadow-sm">
                 <ul class="list-group">
-                    <li class="list-group-item text-left"><a href="/editProfilePage"><span class="pull-left"><strong>Настройки</strong></span></a>
-                    </li>
+                    <li class="list-group-item text-left"><a href="/task"><span
+                            class="pull-left"><strong>Выполнить задания</strong></span></a></li>
+                    <li class="list-group-item text-left"><a href="/editProfilePage"><span
+                            class="pull-left"><strong>Настройки</strong></span></a></li>
                 </ul>
             </div>
 
@@ -62,6 +78,9 @@
                 <div class="navbar navbar-dark shadow-sm" style="background: white">
                     <div class="container d-flex justify-content-center">
                         <h1 style="text-align: center; color: #173d7b;">Мои проекты</h1>
+
+                        </form>
+                        </tr>
                     </div>
                 </div>
             </header>
@@ -69,44 +88,59 @@
             <div class="album py-5">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="card mb-4 shadow-sm">
-                                <header>
-                                    <div class="navbar navbar-dark shadow-sm">
-                                        <div class="container d-flex justify-content-between">
-                                            <a th:href="@{'/user?userId=' + ${project.userId}}"
-                                               class="navbar-brand d-flex align-items-center">
-                                                <img src="/image/no-avatar.png"
-                                                     style="width: 20px; height:20px; border-radius: 100px; margin-right: 10px;">
-                                                <strong style="color:#6c757d;">Album</strong>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </header>
-                                <div class="card-body">
-                                    <p class="card-text">This is a wider card with supporting text below as a natural
-                                        lead-in to additional content. This content is a little bit longer.</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <small class="text-muted left">9 mins</small>
-                                        <div class="mdc-card__action-icons">
-                                            <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded dropdown-toggle"
-                                                    id="dropdownMenuButton" title="Детали"
-                                                    data-mdc-ripple-is-unbounded="true" data-toggle="dropdown"
-                                                    aria-haspopup="true" aria-expanded="false">more_vert
-                                            </button>
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item" href="#">Редактировать</a>
-                                                <a class="dropdown-item" href="#">Удалить</a>
+                        <tr th:each="project:${projects}">
+                            <div class="col-md-4">
+
+                                <form method="post">
+                                    <label>
+                                        <input style="display: none" th:value="${project.name}" name="projectName"/>
+                                    </label>
+                                    <div class="card mb-4 shadow-sm">
+                                        <header>
+                                            <div class="navbar navbar-dark shadow-sm">
+                                                <div class="container d-flex justify-content-between">
+                                                    <a href="#" class="navbar-brand d-flex align-items-center">
+                                                        <img src="../image/no-avatar.png"
+                                                             style="width: 20px; height:20px; border-radius: 100px; margin-right: 10px;">
+                                                        <strong style="color:#6c757d;"
+                                                                th:text="${project.name}"></strong>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </header>
+                                        <div class="card-body">
+                                            <p class="card-text" th:text="${project.fullInfo}"></p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <small class="text-muted left">9 mins</small>
+                                                <div class="mdc-card__action-icons">
+                                                    <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded dropdown-toggle"
+                                                            id="dropdownMenuButton" title="Детали"
+                                                            data-mdc-ripple-is-unbounded="true" data-toggle="dropdown"
+                                                            aria-haspopup="true" aria-expanded="false">more_vert
+                                                    </button>
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                        <a class="dropdown-item" href="#">Посмотреть</a>
+                                                        <a class="dropdown-item"><input type="submit"
+                                                                                        value="Run project"
+                                                                                        formmethod="post"></a>
+                                                        <a class="dropdown-item" href="#">Редактировать</a>
+                                                        <a class="dropdown-item" href="#">Удалить</a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
+
                                     </div>
-                                </div>
+                                </form>
+
                             </div>
-                        </div>
+                        </tr>
                     </div>
                 </div>
             </div>
+
         </div>
+
     </div>
 </div>
 </div>
